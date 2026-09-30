@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="1C Uzbekistan Pro Academy — 1C: Buxgalteriya 3.0, soliq, buxgalteriya, EHF/EDO, ombor, bank, ish haqi va amaliy case-lar.">
+  <title>1C Uzbekistan Pro Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg-grid"></div>
+<header class="topbar">
+  <button class="icon-btn" id="menuBtn">☰</button>
+  <div class="brand">
+    <div class="brand-mark">1C</div>
+    <div><strong>UZ PRO ACADEMY</strong><span>1C • Buxgalteriya • Soliq</span></div>
+  </div>
+  <div class="top-actions">
+    <button class="ghost" id="searchBtn">⌕ Qidirish</button>
+    <button class="ghost" id="themeBtn">◐</button>
+    <div class="progress-mini"><span id="miniProgress">0%</span><div><i id="miniBar"></i></div></div>
+  </div>
+</header>
+
+<aside class="sidebar" id="sidebar">
+  <div class="side-label">O'QUV MARKAZI</div>
+  <button class="nav active" data-view="dashboard">⌂ <span>Bosh sahifa</span></button>
+  <button class="nav" data-view="course">▣ <span>Kurs xaritasi</span></button>
+  <button class="nav" data-view="one-c">◈ <span>1C laboratoriya</span></button>
+  <button class="nav" data-view="tax">₮ <span>Soliq markazi</span></button>
+  <button class="nav" data-view="cases">⚡ <span>Real case'lar</span></button>
+  <button class="nav" data-view="reports">▥ <span>Hisobotlar</span></button>
+  <button class="nav" data-view="glossary">A <span>Terminlar</span></button>
+  <button class="nav" data-view="sources">↗ <span>Manbalar</span></button>
+  <div class="side-bottom">
+    <div class="student-card">
+      <div class="avatar">TB</div><div><b>Professional track</b><small>0 → 1C buxgalter</small></div>
+    </div>
+    <button class="reset" id="resetBtn">Progressni tozalash</button>
+  </div>
+</aside>
+
+<main id="app">
+  <section class="view active" id="dashboard">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">2026 • O'ZBEKISTON • 1C 8.3</div>
+        <h1>1C'ni <em>ichidan</em> o'rganing.<br>Hisobotgacha boring.</h1>
+        <p>0 dan professional foydalanuvchigacha: buxgalteriya mantiqi, 1C hujjatlari, provodkalar, soliqlar, ish haqi, ombor, bank, EDO va real amaliy case'lar.</p>
+        <div class="hero-actions">
+          <button class="primary" data-go="course">O'qishni boshlash →</button>
+          <button class="secondary" data-go="one-c">1C laboratoriyani ochish</button>
+        </div>
+      </div>
+      <div class="hero-orbit">
+        <div class="orbit o1"></div><div class="orbit o2"></div>
+        <div class="core"><b>1C</b><span>UZ 3.0</span></div>
+        <div class="float f1">DEBIT</div><div class="float f2">SOLIQ</div><div class="float f3">ОСВ</div><div class="float f4">EDO</div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><b id="statLessons">40</b><span>Dars</span></div>
+      <div><b>12</b><span>Modul</span></div>
+      <div><b>20+</b><span>Case</span></div>
+      <div><b>8</b><span>Interaktiv laboratoriya</span></div>
+    </div>
+
+    <div class="section-head"><div><span class="eyebrow">YO'NALISH</span><h2>Professional yo'l xaritasi</h2></div><button class="text-btn" data-go="course">Hammasi →</button></div>
+    <div class="roadmap" id="roadmap"></div>
+
+    <div class="section-head"><div><span class="eyebrow">TEZKOR</span><h2>Bugun 15 daqiqada</h2></div></div>
+    <div class="quick-grid">
+      <article class="quick" data-go="one-c"><span>01</span><h3>1C hujjat → provodka</h3><p>Hujjatni kiritganda hisoblarda nima sodir bo'lishini ko'ring.</p></article>
+      <article class="quick" data-go="tax"><span>02</span><h3>Soliq xaritasi</h3><p>QQS, foyda, JShDS, ijtimoiy, aylanma va resurs soliqlarini ajrating.</p></article>
+      <article class="quick" data-go="cases"><span>03</span><h3>Real case</h3><p>Firma sotib oldi → sotdi → pul oldi → oy yopildi.</p></article>
+    </div>
+  </section>
+
+  <section class="view" id="course">
+    <div class="page-title"><div><span class="eyebrow">0 → PRO</span><h1>Kurs xaritasi</h1><p>Har bir dars: tushuncha → 1C amaliyoti → tekshiruv → mini-test.</p></div><div class="searchbox"><input id="lessonSearch" placeholder="Dars qidirish..."></div></div>
+    <div class="module-tabs" id="moduleTabs"></div>
+    <div class="lesson-grid" id="lessonGrid"></div>
+  </section>
+
+  <section class="view" id="one-c">
+    <div class="page-title"><div><span class="eyebrow">SIMULATOR</span><h1>1C laboratoriya</h1><p>Haqiqiy bazaga tegmasdan, 1C mantiqini interaktiv simulyatsiya qiling.</p></div></div>
+    <div class="lab-layout">
+      <div class="mock-1c">
+        <div class="mock-top"><b>1C</b><span>Бухгалтерия для Узбекистана, редакция 3.0</span><i>Пользователь: Бухгалтер</i></div>
+        <div class="mock-body">
+          <div class="mock-side">
+            <b>РАЗДЕЛЫ</b><button>Руководителю</button><button>Банк и касса</button><button>Продажи</button><button>Покупки</button><button>Склад</button><button>Производство</button><button>ОС и НМА</button><button>Зарплата и кадры</button><button>Операции</button><button>ЭДО</button><button>Отчеты</button><button>Справочники</button><button>Администрирование</button>
+          </div>
+          <div class="mock-main">
+            <div class="mock-title">Операция: реализация товара</div>
+            <div class="form-row"><label>Контрагент</label><div class="fake-input">ABC MCHJ</div></div>
+            <div class="form-row"><label>Ombor</label><div class="fake-input">Asosiy ombor</div></div>
+            <div class="form-row"><label>Tovar</label><div class="fake-input">Printer HP • 2 dona • 3 000 000</div></div>
+            <div class="form-row"><label>Hujjat sanasi</label><div class="fake-input">30.09.2026</div></div>
+            <button class="mock-submit" id="postBtn">Провести →</button>
+            <div class="posting" id="postingBox"><span>Dt 4010</span><b>6 000 000</b><span>Kt 9010</span><b>6 000 000</b><small>+ tovar tannarxi va boshqa hisoblar konfiguratsiyaga ko'ra shakllanadi</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="lab-panel">
+        <div class="panel-title">Nimani ko'ryapsiz?</div>
+        <div class="explain" id="labExplain"><b>1.</b> Avval hujjat iqtisodiy voqeani ifodalaydi. <b>2.</b> “Провести” bosilganda 1C hisob registrlarini yangilaydi. <b>3.</b> Keyin ОСВ va boshqa hisobotlarda natijani tekshirasiz.</div>
+        <div class="lab-actions">
+          <button class="chip" data-lab="purchase">Xarid</button><button class="chip" data-lab="sale">Sotuv</button><button class="chip" data-lab="bank">Bank</button><button class="chip" data-lab="salary">Oylik</button>
+        </div>
+        <div class="code-card"><div><span>EKRAN KODI</span><button class="copy-code" data-copy="code1">Copy</button></div><pre id="code1">&lt;div class="mock-1c"&gt;
+  &lt;button&gt;Провести&lt;/button&gt;
+  &lt;div class="posting"&gt;
+    Dt 4010 / Kt 9010
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+      </div>
+    </div>
+    <div class="screen-gallery">
+      <div class="section-head"><div><span class="eyebrow">SCREEN • CODE</span><h2>1C ekranlari qanday tuziladi?</h2></div></div>
+      <div class="screen-grid" id="screenGrid"></div>
+    </div>
+  </section>
+
+  <section class="view" id="tax">
+    <div class="page-title"><div><span class="eyebrow">SOLIQ MARKAZI</span><h1>Soliq tizimi</h1><p>Stavka, baza, hisobot davri, deklaratsiya, to'lov va 1Cdagi aksini bir zanjirda o'rganing.</p></div></div>
+    <div class="warning"><b>2026 nazorat nuqtasi:</b> stavka va muddatlar qonunchilik bilan o'zgarishi mumkin. Kursda amaldagi hujjatga havola beriladi; real hisobot topshirishdan oldin Soliq qo'mitasi/LexUZdagi amaldagi talabni tekshiring.</div>
+    <div class="tax-grid" id="taxGrid"></div>
+    <div class="calculator">
+      <div><span class="eyebrow">AMALIY</span><h2>Soliq kalkulyatori — o'quv rejimi</h2><p>Bu kalkulyator dars uchun. Imtiyoz, maxsus stavka va chegirmalarni avtomatik hisoblamaydi.</p></div>
+      <div class="calc-row"><label>Aylanma / baza</label><input id="taxBase" type="number" value="100000000"></div>
+      <div class="calc-row"><label>Stavka %</label><input id="taxRate" type="number" value="12"></div>
+      <div class="calc-result"><span>Hisoblangan summa</span><b id="taxResult">12 000 000 so'm</b></div>
+      <button class="primary" id="calcBtn">Hisoblash</button>
+    </div>
+  </section>
+
+  <section class="view" id="cases">
+    <div class="page-title"><div><span class="eyebrow">REAL CASE LAB</span><h1>Amaliy case'lar</h1><p>Javoblar bir joyga tiqilmagan: har bosqich alohida ochiladi.</p></div></div>
+    <div class="case-layout"><div id="caseList" class="case-list"></div><div id="caseWork" class="case-work"></div></div>
+  </section>
+
+  <section class="view" id="reports">
+    <div class="page-title"><div><span class="eyebrow">CONTROL CENTER</span><h1>Hisobotlar</h1><p>Hujjatlardan hisobotgacha nazorat nuqtalari.</p></div></div>
+    <div class="report-flow">
+      <div><b>01</b><h3>Hujjatlar</h3><p>Kirim, sotuv, bank, kassa, ish haqi.</p></div>
+      <div><b>02</b><h3>Provodka</h3><p>Dt/Kt va analitika.</p></div>
+      <div><b>03</b><h3>Registr</h3><p>Aylanish va qoldiq.</p></div>
+      <div><b>04</b><h3>ОСВ</h3><p>Schyotlar nazorati.</p></div>
+      <div><b>05</b><h3>Reglament</h3><p>Oy yopilishi va hisobot.</p></div>
+    </div>
+    <div class="report-table"><table><thead><tr><th>Hisobot</th><th>Nimani tekshiradi?</th><th>Qachon?</th></tr></thead><tbody>
+      <tr><td>ОСВ</td><td>Schyotlar bo'yicha aylanish va saldo</td><td>Har oy / nazorat</td></tr>
+      <tr><td>Balans</td><td>Aktiv, majburiyat, kapital</td><td>Hisobot davri</td></tr>
+      <tr><td>Debitor/Kreditor</td><td>Kim bizga / biz kimga qarzdormiz</td><td>Doimiy nazorat</td></tr>
+      <tr><td>Foyda va zarar</td><td>Daromad, xarajat, moliyaviy natija</td><td>Davr yakuni</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section class="view" id="glossary">
+    <div class="page-title"><div><span class="eyebrow">REFERENCE</span><h1>Terminlar</h1><p>Debetdan markirovka va EHFgacha.</p></div><div class="searchbox"><input id="termSearch" placeholder="Termin qidirish..."></div></div>
+    <div class="glossary" id="glossaryList"></div>
+  </section>
+
+  <section class="view" id="sources">
+    <div class="page-title"><div><span class="eyebrow">VERIFIED SOURCES</span><h1>Manbalar</h1><p>Kurs kontenti rasmiy 1C, Soliq qo'mitasi va LexUZ materiallariga bog'langan.</p></div></div>
+    <div class="source-grid">
+      <a class="source" href="https://1c.uz/v8/generic_products/uz_accounting.php" target="_blank"><b>1C Uzbekistan</b><span>1C:Бухгалтерия 8 для Узбекистана, red. 3.0 funksiyalari</span></a>
+      <a class="source" href="https://1c.uz/news/detail/1268040/" target="_blank"><b>1C Uzbekistan • 16.09.2026</b><span>Redaksiya 3.0 bo'yicha yangi sertifikatlangan kurs mazmuni</span></a>
+      <a class="source" href="https://repository.soliq.uz/repository/?lang=uz" target="_blank"><b>my.soliq.uz / Soliq qo'mitasi</b><span>Elektron soliq xizmatlari portali</span></a>
+      <a class="source" href="https://www.lex.uz/uz/acts/7949060" target="_blank"><b>LexUZ • O'RQ-1105</b><span>2026-yil Davlat budjeti to'g'risidagi qonun</span></a>
+    </div>
+    <div class="source-note"><b>Kontent qoidasi:</b> kurs “o'quv simulyatori”. 1Cdagi aniq provodka va soliq hisoblash hisob siyosati, hujjat turi, kontragent, operatsiya va amaldagi qonunchilikka bog'liq bo'lishi mumkin. Shu sababli darslarda “tipik misol” va “tekshiruv nuqtasi” alohida ko'rsatilgan.</div>
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="modal-inner"><button class="modal-close">×</button><div id="modalContent"></div></div></div>
+<script src="app.js"></script>
+</body>
+</html>
