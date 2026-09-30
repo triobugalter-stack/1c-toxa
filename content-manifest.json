@@ -1,0 +1,41 @@
+{
+  "project": "1C UZ Pro Academy",
+  "version": "1.0.0",
+  "date": "2026-09-30",
+  "stack": [
+    "HTML5",
+    "CSS3",
+    "Vanilla JavaScript"
+  ],
+  "modules": [
+    "Buxgalteriya 0 dan",
+    "1C arxitekturasi",
+    "Ma'lumotnomalar",
+    "Xaridlar",
+    "Sotuvlar",
+    "Bank va kassa",
+    "Ombor va markirovka",
+    "Ish haqi va kadrlar",
+    "Soliq tizimlari",
+    "Asosiy vositalar va ishlab chiqarish",
+    "Hisobot va oy yopilishi",
+    "Professional level"
+  ],
+  "lessons_in_app": "40+",
+  "features": [
+    "1C simulator",
+    "tax center",
+    "case lab",
+    "reports",
+    "glossary",
+    "screen/code gallery",
+    "dark-light mode",
+    "local progress"
+  ],
+  "official_sources": [
+    "https://1c.uz/v8/generic_products/uz_accounting.php",
+    "https://1c.uz/news/detail/1268040/",
+    "https://repository.soliq.uz/repository/?lang=uz",
+    "https://www.lex.uz/uz/acts/7949060"
+  ]
+}
